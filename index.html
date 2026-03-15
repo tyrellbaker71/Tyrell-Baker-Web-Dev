@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyrell Baker — Web Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       CUSTOM CURSOR
+  ═══════════════════════════════════════════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">TB</a>
+      <ul class="nav-links">
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta mag-btn">
+        <span>Let's Talk</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Animated noise canvas background -->
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <!-- Floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Available for freelance
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-line reveal-line">Building websites</span>
+        <span class="hero-line reveal-line italic-word">clients <em>actually</em></span>
+        <span class="hero-line reveal-line">remember.</span>
+      </h1>
+
+      <p class="hero-sub reveal-up">
+        Tyrell Baker — freelance web developer crafting immersive,<br>
+        high-performance digital experiences.
+      </p>
+
+      <div class="hero-actions reveal-up">
+        <a href="#work" class="btn-primary mag-btn">
+          <span>See the work</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost mag-btn">
+          <span>Get in touch</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       MARQUEE STRIP
+  ═══════════════════════════════════════════════ -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Web Design</span><span class="sep">◆</span>
+        <span>UI Development</span><span class="sep">◆</span>
+        <span>Motion & Animation</span><span class="sep">◆</span>
+        <span>E-commerce</span><span class="sep">◆</span>
+        <span>Performance Optimisation</span><span class="sep">◆</span>
+        <span>Brand Identity</span><span class="sep">◆</span>
+        <span>Web Design</span><span class="sep">◆</span>
+        <span>UI Development</span><span class="sep">◆</span>
+        <span>Motion & Animation</span><span class="sep">◆</span>
+        <span>E-commerce</span><span class="sep">◆</span>
+        <span>Performance Optimisation</span><span class="sep">◆</span>
+        <span>Brand Identity</span><span class="sep">◆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       BENTO SERVICES GRID
+  ═══════════════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label reveal-up">What I do</div>
+      <h2 class="section-title reveal-up">
+        Every pixel<br>earns its place.
+      </h2>
+
+      <div class="bento-grid">
+        <!-- Card 1 — Large -->
+        <div class="bento-card bento-large bento-glow reveal-card">
+          <div class="bento-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 44h16M24 36v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Web Design & Development</h3>
+          <p>Custom-built, pixel-perfect websites that balance beauty with performance. No templates. No compromises.</p>
+          <div class="bento-tag">Core service</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bento-card reveal-card">
+          <div class="bento-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M24 6C24 6 14 16 14 24s10 18 10 18M24 6c0 0 10 10 10 18S24 42 24 42M6 24h36" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>E-commerce</h3>
+          <p>Storefronts that convert browsers into buyers — fast, beautiful, trusted.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bento-card reveal-card">
+          <div class="bento-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 16l8-8 8 8M16 8v24M24 32l8 8 8-8M32 40V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Motion & Animation</h3>
+          <p>Interactions that delight — scroll-driven, cursor-reactive, entirely bespoke.</p>
+        </div>
+
+        <!-- Card 4 — Accent -->
+        <div class="bento-card bento-accent reveal-card">
+          <div class="bento-stat">100%</div>
+          <p>Custom code — never a template drag-and-drop</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bento-card reveal-card">
+          <div class="bento-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="8" width="28" height="36" rx="2" stroke="currentColor" stroke-width="2"/><path d="M18 20h12M18 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>SEO & Performance</h3>
+          <p>Sites built to rank, load fast, and keep visitors engaged long after the first scroll.</p>
+        </div>
+
+        <!-- Card 6 — Quote -->
+        <div class="bento-card bento-wide bento-dark reveal-card">
+          <blockquote>
+            "A great website is the most powerful salesperson your business will ever have."
+          </blockquote>
+          <div class="bento-tag">The philosophy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WORK SHOWCASE — RESTAURANT
+  ═══════════════════════════════════════════════ -->
+  <section class="showcase" id="work">
+    <div class="showcase-inner restaurant-theme">
+      <div class="showcase-label reveal-up">Restaurant &amp; Hospitality</div>
+      <div class="showcase-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <span></span><span></span><span></span>
+            <div class="mock-url">maison-restaurant.co.za</div>
+          </div>
+          <div class="mock-screen restaurant-screen">
+            <div class="rest-hero">
+              <div class="rest-overlay"></div>
+              <div class="rest-content">
+                <p class="rest-tag">Est. 2019 · Cape Town</p>
+                <h2>MAISON</h2>
+                <p class="rest-sub">A dining experience above the ordinary</p>
+                <button class="rest-btn">Reserve a Table</button>
+              </div>
+            </div>
+            <div class="rest-cards">
+              <div class="rest-card"><div class="rc-img rc-1"></div><p>Tasting Menu</p></div>
+              <div class="rest-card"><div class="rc-img rc-2"></div><p>Wine Cellar</p></div>
+              <div class="rest-card"><div class="rc-img rc-3"></div><p>Private Events</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-copy reveal-up">
+        <h3>Restaurants &amp; Venues</h3>
+        <p>Atmospheric sites that turn a visit to the page into an appetite. Reservations, menus, events — seamlessly integrated.</p>
+        <ul class="feat-list">
+          <li>Online reservation systems</li>
+          <li>Animated menus &amp; galleries</li>
+          <li>Google Maps integration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WORK SHOWCASE — CREATIVE AGENCY
+  ═══════════════════════════════════════════════ -->
+  <section class="showcase showcase-alt">
+    <div class="showcase-inner agency-theme">
+      <div class="showcase-copy reveal-up">
+        <div class="showcase-label">Creative Agencies</div>
+        <h3>Bold identities.<br>Bolder websites.</h3>
+        <p>Creative agencies need websites that match their ambition. Experimental layouts, rich motion, and a digital presence that wins pitches before the meeting starts.</p>
+        <ul class="feat-list">
+          <li>Experimental layouts</li>
+          <li>Scroll-driven storytelling</li>
+          <li>Portfolio case studies</li>
+        </ul>
+      </div>
+      <div class="showcase-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <span></span><span></span><span></span>
+            <div class="mock-url">studioform.co.za</div>
+          </div>
+          <div class="mock-screen agency-screen">
+            <div class="agency-nav"><span>STUDIOFORM</span><span>Work / About / Contact</span></div>
+            <div class="agency-hero">
+              <h2>We build<br><em>desire.</em></h2>
+              <p>Branding &amp; digital studio</p>
+            </div>
+            <div class="agency-grid">
+              <div class="ag ag-1"></div>
+              <div class="ag ag-2"></div>
+              <div class="ag ag-3"></div>
+              <div class="ag ag-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WORK SHOWCASE — E-COMMERCE
+  ═══════════════════════════════════════════════ -->
+  <section class="showcase">
+    <div class="showcase-inner ecom-theme">
+      <div class="showcase-label reveal-up">E-commerce</div>
+      <div class="showcase-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <span></span><span></span><span></span>
+            <div class="mock-url">arkstore.co.za</div>
+          </div>
+          <div class="mock-screen ecom-screen">
+            <div class="ecom-header">
+              <span>ARK</span>
+              <span>Shop / About / Cart (3)</span>
+            </div>
+            <div class="ecom-hero-text">New drop — <strong>Void Collection</strong></div>
+            <div class="ecom-products">
+              <div class="ep-card">
+                <div class="ep-img ep-1"></div>
+                <p>Obsidian Tee</p>
+                <span>R 480</span>
+              </div>
+              <div class="ep-card">
+                <div class="ep-img ep-2"></div>
+                <p>Lunar Hoodie</p>
+                <span>R 890</span>
+              </div>
+              <div class="ep-card">
+                <div class="ep-img ep-3"></div>
+                <p>Arc Shorts</p>
+                <span>R 650</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-copy reveal-up">
+        <h3>E-commerce Stores</h3>
+        <p>Stores engineered to sell. Fast load times, frictionless checkout, and product pages that make customers reach for their wallets.</p>
+        <ul class="feat-list">
+          <li>Shopify / custom solutions</li>
+          <li>Product configurators</li>
+          <li>Payment gateway integration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WORK SHOWCASE — TECH STARTUP
+  ═══════════════════════════════════════════════ -->
+  <section class="showcase showcase-alt">
+    <div class="showcase-inner tech-theme">
+      <div class="showcase-copy reveal-up">
+        <div class="showcase-label">Tech Startups &amp; SaaS</div>
+        <h3>Launch sites that<br>raise rounds.</h3>
+        <p>Investor-ready, conversion-optimised landing pages and product sites for startups that need to move fast without looking cheap.</p>
+        <ul class="feat-list">
+          <li>Landing pages that convert</li>
+          <li>Dashboard UI mockups</li>
+          <li>Pricing &amp; waitlist flows</li>
+        </ul>
+      </div>
+      <div class="showcase-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <span></span><span></span><span></span>
+            <div class="mock-url">nexus-app.io</div>
+          </div>
+          <div class="mock-screen tech-screen">
+            <div class="tech-nav"><span class="tech-logo-dot">◉ NEXUS</span><span>Pricing · Docs · Login</span></div>
+            <div class="tech-hero">
+              <div class="tech-badge">Now in Beta</div>
+              <h2>Automate your<br>entire workflow</h2>
+              <p>One platform. Zero friction.</p>
+              <div class="tech-btns">
+                <button class="tech-cta">Start free</button>
+                <button class="tech-ghost">Watch demo →</button>
+              </div>
+            </div>
+            <div class="tech-dash">
+              <div class="td-bar"></div>
+              <div class="td-bar td-b2"></div>
+              <div class="td-bar td-b3"></div>
+              <div class="td-bar td-b4"></div>
+              <div class="td-bar td-b5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WORK SHOWCASE — PHOTOGRAPHY
+  ═══════════════════════════════════════════════ -->
+  <section class="showcase">
+    <div class="showcase-inner photo-theme">
+      <div class="showcase-label reveal-up">Photography &amp; Creatives</div>
+      <div class="showcase-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <span></span><span></span><span></span>
+            <div class="mock-url">reiaphoto.co.za</div>
+          </div>
+          <div class="mock-screen photo-screen">
+            <div class="photo-nav">
+              <span>REIA</span>
+              <span>Portfolio · Prints · Book</span>
+            </div>
+            <div class="photo-grid">
+              <div class="pg pg-1"></div>
+              <div class="pg pg-2"></div>
+              <div class="pg pg-3"></div>
+              <div class="pg pg-4"></div>
+              <div class="pg pg-5"></div>
+              <div class="pg pg-6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-copy reveal-up">
+        <h3>Photography &amp; Creatives</h3>
+        <p>Portfolios as striking as the work itself. Fullscreen galleries, enquiry flows, and booking pages built to land the commission.</p>
+        <ul class="feat-list">
+          <li>Fullscreen lightbox galleries</li>
+          <li>Booking &amp; enquiry forms</li>
+          <li>Print shop integration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       LOCAL SERVICES
+  ═══════════════════════════════════════════════ -->
+  <section class="showcase showcase-alt">
+    <div class="showcase-inner local-theme">
+      <div class="showcase-copy reveal-up">
+        <div class="showcase-label">Local Service Businesses</div>
+        <h3>Be the first name<br>they find.</h3>
+        <p>Plumbers, salons, clinics, contractors — local businesses deserve websites that rank on Google and convert visitors into booked appointments.</p>
+        <ul class="feat-list">
+          <li>Local SEO optimisation</li>
+          <li>Online booking systems</li>
+          <li>Google Reviews integration</li>
+        </ul>
+      </div>
+      <div class="showcase-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <span></span><span></span><span></span>
+            <div class="mock-url">elitecleaning.co.za</div>
+          </div>
+          <div class="mock-screen local-screen">
+            <div class="local-header">
+              <span>✦ ELITE CLEAN</span>
+              <button class="local-book-btn">Book Now</button>
+            </div>
+            <div class="local-hero">
+              <h2>Professional Cleaning,<br>Every Time.</h2>
+              <p>Durban &amp; surrounding areas</p>
+            </div>
+            <div class="local-features">
+              <div class="lf"><span>★★★★★</span><p>4.9 on Google</p></div>
+              <div class="lf"><span>⚡</span><p>Same-day available</p></div>
+              <div class="lf"><span>✓</span><p>Fully insured</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       PROCESS SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-label reveal-up">The process</div>
+      <h2 class="section-title reveal-up">Simple, transparent,<br>and built around you.</h2>
+
+      <div class="process-steps">
+        <div class="process-step reveal-card">
+          <div class="step-num">01</div>
+          <h4>Discovery</h4>
+          <p>We talk about your business, your goals, and what success looks like for your website. No jargon, just a real conversation.</p>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step reveal-card">
+          <div class="step-num">02</div>
+          <h4>Design</h4>
+          <p>I design a custom concept tailored to your brand. Every layout, colour, and typeface is chosen with purpose.</p>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step reveal-card">
+          <div class="step-num">03</div>
+          <h4>Build</h4>
+          <p>Clean, fast, hand-coded. Your site is built for performance — responsive on every device, optimised for search engines.</p>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step reveal-card">
+          <div class="step-num">04</div>
+          <h4>Launch</h4>
+          <p>We go live. I handle the technical setup, test everything thoroughly, and stay available for support after launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-copy reveal-up">
+          <div class="section-label">Get in touch</div>
+          <h2 class="section-title">Ready to build<br>something great?</h2>
+          <p>Have a project in mind? Let's talk. I respond within 24 hours.</p>
+        </div>
+
+        <div class="contact-cards">
+          <!-- Call -->
+          <a href="tel:+27653480014" class="contact-card mag-btn reveal-card" data-type="call">
+            <div class="cc-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M10 14c0-2.2 1.8-4 4-4h3.6l4 8-2.6 2.6a20 20 0 009.4 9.4L31 27.4l8 4V35c0 2.2-1.8 4-4 4C18.6 39 9 29.4 9 14h1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="cc-text">
+              <span class="cc-label">Call directly</span>
+              <span class="cc-value">+27 65 348 0014</span>
+            </div>
+            <div class="cc-arrow">↗</div>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/27653480014" target="_blank" rel="noopener" class="contact-card mag-btn reveal-card" data-type="whatsapp">
+            <div class="cc-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 28.2c-.4-.2-2.3-1.1-2.6-1.2-.3-.1-.6-.2-.8.2s-1 1.2-1.2 1.5c-.2.2-.4.3-.8.1a10.5 10.5 0 01-3-1.8 10.8 10.8 0 01-2-2.5c-.2-.4 0-.6.2-.8l.5-.6.4-.6.1-.5-1-2.5c-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 3s1.2 3.4 1.4 3.7c.1.2 2.4 3.8 5.9 5.3 2.4 1 3.3.9 3.9.7.8-.2 2.3-1 2.7-1.8.3-.9.3-1.6.2-1.8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="cc-text">
+              <span class="cc-label">WhatsApp</span>
+              <span class="cc-value">Send a message</span>
+            </div>
+            <div class="cc-arrow">↗</div>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:codingty05@gmail.com" class="contact-card mag-btn reveal-card" data-type="email">
+            <div class="cc-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="12" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M6 16l18 13L42 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="cc-text">
+              <span class="cc-label">Email</span>
+              <span class="cc-value">codingty05@gmail.com</span>
+            </div>
+            <div class="cc-arrow">↗</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">TB</span>
+          <p>Tyrell Baker — Freelance Web Developer</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:codingty05@gmail.com">codingty05@gmail.com</a>
+          <a href="tel:+27653480014">+27 65 348 0014</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tyrell Baker. All rights reserved.</p>
+        <p class="footer-made">Crafted with intention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
